@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+let name = "Elsa"
+
+let greeting = "Hello"
+
+const items = ["Dog", "Cat", "Platipus"];
+
+---
+
+    <BaseLayout title = "HomePage">
+    
+      <h1>{greeting}, Astro {name}!</h1>
+
+      <ul>
+        {items.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+      
+    </BaseLayout>
+
