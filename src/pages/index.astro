@@ -1,6 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import FamilyMember from './FamilyMember.astro';
+import FamilyMember from '../components/FamilyMember.astro';
+import Rainsberger from '../components/Rainsberger.astro';
+import RainsbergerList from '../components/RainsbergerList.astro';
+
+
 let name = "Elsa"
 
 let greeting = "Hello"
@@ -19,11 +23,23 @@ const items = ["Dog", "Cat", "Platipus"];
         ))}
       </ul>
 
-    <h3>These are the people in my family</h3>
-    <ul>
-      <FamilyMember name = "Sarah" colour = "red" />
-      <FamilyMember name = "Joe"  colour = "grey"/>
-    </ul>
+      <h3>These are the people in my family</h3>
+      <ul>
+        <FamilyMember name = "Sarah" colour = "red" />
+        <FamilyMember name = "Joe"  colour = "grey"/>
+      </ul>
+      
+      <Rainsberger>
+        Sarah
+      </Rainsberger>
+      <Rainsberger>
+        Joe
+      </Rainsberger>
+
+      <RainsbergerList>
+        <li>Sarah</li>
+        <li>Joe</li>
+      </RainsbergerList>
       
     </BaseLayout>
 
