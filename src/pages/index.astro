@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-
+import FamilyMember from './FamilyMember.astro';
 let name = "Elsa"
 
 let greeting = "Hello"
@@ -18,6 +18,12 @@ const items = ["Dog", "Cat", "Platipus"];
           <li>{item}</li>
         ))}
       </ul>
+
+    <h3>These are the people in my family</h3>
+    <ul>
+      <FamilyMember name = "Sarah" colour = "red" />
+      <FamilyMember name = "Joe"  colour = "grey"/>
+    </ul>
       
     </BaseLayout>
 
