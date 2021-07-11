@@ -7,13 +7,16 @@ import { Markdown } from 'astro/components';
     <title>{title}</title>
   </head>
   <body>
-    <!-- Adds a navigation bar to every page. -->
     <nav>
       <Markdown>I'm a common layout. You are viewing **{title}**</Markdown>
       <a href="#">Home</a>{' '}
       <a href="#">Posts</a>{' '}
       <a href="#">Contact</a>
     </nav>
-    <slot> </slot>
+    <slot />
+    <footer>
+      <hr>
+      <Markdown>Look at me, I'm a footer on **{title}**</Markdown>
+    </footer>
   </body>
 </html>
