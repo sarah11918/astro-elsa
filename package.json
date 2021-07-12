@@ -14,5 +14,7 @@
   "devDependencies": {
     "nodemon": "1.18.4"
   },
-  "keywords": ["astro"]
+  "keywords": [
+    "astro"
+  ]
 }

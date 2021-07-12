@@ -1,0 +1,19 @@
+---
+import { Markdown } from 'astro/components';
+import {Prism } from 'astro/components';
+---
+<html>
+<head></head>
+<body>
+  <h3>Code written between 2 markdown tags</h3>
+  <Markdown>
+    ```js
+    console.log("Hello World");
+    ```
+  </Markdown>
+  <h3>Code written as code attribute in a Prism component</h3>
+  <Prism code={`js
+  console.log("Hello World");`}/>
+
+</body>
+</html>

@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import FamilyMember from '../components/FamilyMember.astro';
 import Rainsberger from '../components/Rainsberger.astro';
 import RainsbergerList from '../components/RainsbergerList.astro';
-
+import { Markdown } from 'astro/components';
 
 let name = "Elsa"
 
@@ -28,7 +28,9 @@ const items = ["Dog", "Cat", "Platipus"];
         <FamilyMember name = "Sarah" colour = "red" />
         <FamilyMember name = "Joe"  colour = "grey"/>
       </ul>
-      
+      <Markdown>
+      ## Markdown test 2
+      </Markdown>
       <Rainsberger>
         Sarah
       </Rainsberger>
@@ -41,5 +43,8 @@ const items = ["Dog", "Cat", "Platipus"];
         <li>Joe</li>
       </RainsbergerList>
       
+      <Markdown>
+      ## Markdown test 1
+      </Markdown>
     </BaseLayout>
 
