@@ -13,17 +13,22 @@ import { Markdown } from 'astro/components';
       <Markdown>I'm a common layout. You are viewing **{title}**</Markdown>
       <a href="/">Home</a>{' '}
       <a href="/react-components">React</a>{' '}
-      <a href="/markdown-page">Markdown</a>{' '}
       <a href="/remote-markdown">Remote Markdown</a>{' '}
       <a href="/data-fetching">Data Fetching</a>{' '}
-      <a href="/code-samples">Code Snippets</a>
+      <a href="/code-samples">Code Snippets</a>{' '}
+      <a href="/posts/first-post">Markdown Post</a>
 
     </nav>
     <br>
     <slot />
     <footer>
       <hr>
-      <Markdown>Look at me, I'm a footer on **{title}**</Markdown>
+      <div>
+      <Markdown>
+      Look at me, I'm a footer on **{title}**
+      
+      Built by [@sarah11918](https://www.twitter.com/sarah11918) on a Chromebook via [CodeSandbox](https://codesandbox.io) ~ [#BuiltByAstro](http://astro.build) 
+      </Markdown></div>
     </footer>
  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/plugins/line-numbers/prism-line-numbers.js"></script>
   </body>

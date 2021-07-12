@@ -8,6 +8,8 @@ export default function Counter() {
   return (
     <div>
       <h3>Counter</h3>
+      <p>From (<a href="https://github.com/cassidoo/astro-netlify-starter">Cassidy Williams' astro-netlify-starter </a>)</p>
+     
       <p>Count: {count}</p>
       <button onClick={() => setCount(count + 1)}>+</button>
       <button onClick={() => setCount(count - 1)}>-</button>

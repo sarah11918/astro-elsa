@@ -4,6 +4,7 @@ const Characters = ({ characters }) => {
   return (
     <>
       <h3>List of Characters from an API call</h3>
+      <p>(<a href="https://spacejelly.dev/posts/how-to-use-astro-to-build-react-apps-without-javascript/">Tutorial by Colby Fayock</a>)</p>
       <ul>
         {characters.map(character => {
           return (
