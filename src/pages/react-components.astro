@@ -2,6 +2,10 @@
 import BaseLayout from '../layouts/BaseLayout'
 import Button from '../components/Button.jsx';
 import Counter from '../components/Counter.jsx';
+import Characters from '../components/Characters.jsx';
+
+const characters = await fetch('https://finalspaceapi.com/api/v0/character?limit=5')
+ .then((res) => res.json());
 ---
 <BaseLayout title="React Component Playground" >
 
@@ -10,5 +14,7 @@ import Counter from '../components/Counter.jsx';
 <Button client:visible />
 
 <Counter client:visible />
+
+<Characters characters={characters} client:visible />
 
 </BaseLayout>
