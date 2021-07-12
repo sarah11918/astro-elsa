@@ -1,41 +1,15 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import FamilyMember from '../components/FamilyMember.astro';
-import Rainsberger from '../components/Rainsberger.astro';
-import RainsbergerList from '../components/RainsbergerList.astro';
 import { Markdown } from 'astro/components';
 
-let name = "Elsa"
-
 let greeting = "Hello"
-
-const items = ["Dog", "Cat", "Platipus"];
-
+let name = "Elsa"
 
 ---
 
     <BaseLayout title = "HomePage">
     
       <h1>{greeting}, Astro {name}!</h1>
-
-      <ul>
-        {items.map((item) => (
-          <li>{item}</li>
-        ))}
-      </ul>
-
-      <h3>These are the people in my family</h3>
-      <ul>
-        <FamilyMember name = "Sarah" colour = "red" />
-        <FamilyMember name = "Joe"  colour = "grey"/>
-      </ul>
- 
-
-      <RainsbergerList>
-        <li>Sarah</li>
-        <li>Joe</li>
-      </RainsbergerList>
-  
   
     </BaseLayout>
 

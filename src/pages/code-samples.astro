@@ -1,19 +1,74 @@
 ---
 import { Markdown } from 'astro/components';
 import {Prism } from 'astro/components';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+let codesnippet = `{
+  // In your gatsby-config.js
+    plugins: [
+      {
+        resolve: \`gatsby-transformer-remark\`,
+        options: {
+          plugins: [
+            \`gatsby-remark-prismjs\`,
+          ]
+        }
+      }
+    ]
+}`
 ---
-<html>
-<head></head>
-<body>
+
+<BaseLayout title = "Code Snippet Samples" >
+
+  <Prism lang="js" code={`
+    //The \` character needs to be escaped!
+    <Prism code={\` 
+    {
+      resolve: \\\`gatsby-transformer-remark\\\`
+      options: {
+      plugins: [
+        \\\`gatsby-remark-prismjs\\\`,
+      ]
+    }
+    \`}/>
+  `} />
+
   <h3>Code written between 2 markdown tags</h3>
+
   <Markdown>
     ```js
-    console.log("Hello World");
+      // In your gatsby-config.js
+      plugins: [
+        {
+          resolve: `gatsby-transformer-remark`,
+          options: {
+            plugins: [
+              `gatsby-remark-prismjs`,
+            ]
+          }
+        }
+      ]
     ```
   </Markdown>
-  <h3>Code written as code attribute in a Prism component</h3>
-  <Prism lang="js" code={`console.log("Hello World");
-  let con = bar`}/>
 
-</body>
-</html>
+  <h3>Code written as code attribute in a Prism component</h3>
+  <Prism lang="js" code={` 
+    // In your gatsby-config.js
+    plugins: [
+      {
+        resolve: "gatsby-transformer-remark",
+        options: {
+          plugins: [
+            "gatsby-remark-prismjs",
+          ]
+        }
+      }
+    ]
+  `} />
+
+  <h3>Code passed in to code attribute from frontmatter in a Prism component</h3>
+
+  <Prism lang="js"  code={codesnippet} />
+
+
+</BaseLayout>

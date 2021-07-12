@@ -5,6 +5,8 @@ import { Markdown } from 'astro/components';
 <html>
   <head>
     <title>{title}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/themes/prism-tomorrow.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/plugins/line-numbers/prism-line-numbers.css">
   </head>
   <body>
     <nav>
@@ -12,7 +14,9 @@ import { Markdown } from 'astro/components';
       <a href="/">Home</a>{' '}
       <a href="/react-components">React</a>{' '}
       <a href="/markdown-page">Markdown</a>{' '}
+      <a href="/remote-markdown">Remote Markdown</a>{' '}
       <a href="/data-fetching">Data Fetching</a>{' '}
+      <a href="/code-samples">Code Snippets</a>
 
     </nav>
     <br>
@@ -21,5 +25,13 @@ import { Markdown } from 'astro/components';
       <hr>
       <Markdown>Look at me, I'm a footer on **{title}**</Markdown>
     </footer>
+ <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/plugins/line-numbers/prism-line-numbers.js"></script>
   </body>
 </html>
+
+
+
+   <!--
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+-->
