@@ -5,3 +5,7 @@ description: This is page from an .md file
 layout: ../layouts/MarkdownPostLayout.astro
 ---
 Here is **some** markdown, yo!
+
+```js
+let myLife = better
+```

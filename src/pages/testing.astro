@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FamilyMember from '../components/FamilyMember.astro';
+import Rainsberger from '../components/Rainsberger.astro';
+---
+<style>
+  .luxury {
+    font-weight: bold;
+    color: red;
+  }
+  h1 {
+    color: green;
+  }
+  p {
+    color: grey;
+  }
+
+  li {
+    color: orange;
+  }
+ :global(h1) {
+    font-style: italic;
+  }
+  :global(li) {
+    font-weight: bold;
+    font-size: 8px;
+  }
+</style>
+
+<BaseLayout>
+  <Rainsberger><p>Sarah<p></Rainsberger>
+
+  <p>Some text</p>
+  <p class="luxury"> Some luxury text </p>
+  <ul>
+    <li>a list item</li>
+    <li class="luxury"> a luxury list item</li>
+  </ul>
+  
+  <h1> a heading</h1>
+  <h1 class="luxury"> a luxury heading</h1>
+  
+  <ul>
+  <li><FamilyMember name="Sarah" colour="blue" /></li>
+  </ul>
+
+  
+  
+</BaseLayout>
