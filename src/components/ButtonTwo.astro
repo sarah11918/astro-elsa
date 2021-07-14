@@ -1,0 +1,17 @@
+---
+const {theme} = Astro.props
+---
+<style>
+  .btn {
+    color: purple;
+    padding: 0.5em 1em;
+    border-radius: 3px;
+    font-weight: bold;
+  }
+  .btn[data-theme="nav"] {
+    background-color: yellow;
+  }
+
+</style>
+
+<button type="button" class="btn" data-theme={theme}><slot/></button>

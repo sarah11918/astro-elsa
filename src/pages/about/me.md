@@ -1,8 +1,10 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
+layout: ../../layouts/BaseLayout.astro
 title: About ME
 author: Sarah
-description: This is page from an .md file
+description: This is about me.
 ---
 
-About ME
+# About ME, specifically.
+
+This is a markdown page. Maybe it will become a .astro page.

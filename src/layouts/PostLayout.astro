@@ -1,9 +1,0 @@
----
-import BaseLayout from '../layouts/BaseLayout';
-const {title, author, description} = Astro.props;
----
-<BaseLayout title={title}>
-  <div>Post author: {author}</div>
-  <div>{description}</div>
-  <slot />
-</BaseLayout>
