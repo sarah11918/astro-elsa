@@ -1,5 +1,4 @@
 ---
-ordinal: 3
 title: Third Post
 author: Sarah
 date: 2021-07-13

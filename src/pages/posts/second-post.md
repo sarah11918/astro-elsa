@@ -1,5 +1,4 @@
 ---
-ordinal: 2
 title: Second Post
 author: Sarah
 date: 2021-07-12

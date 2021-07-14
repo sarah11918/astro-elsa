@@ -1,5 +1,4 @@
 ---
-ordinal: 4
 title: Fourth Post
 author: Sarah
 date: 2021-07-14
