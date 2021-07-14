@@ -1,4 +1,5 @@
 ---
+ordinal: 1
 title: First Post
 author: Sarah
 date: 2021-07-11

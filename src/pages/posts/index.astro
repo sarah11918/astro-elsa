@@ -1,9 +1,30 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+let allPosts = Astro.fetchContent('./*.md');
+let sortedPosts = allPosts.slice().sort((a, b) => b.ordinal - a.ordinal)
 
+console.log(sortedPosts[0].date.toString())
 ---
 <BaseLayout title="My Posts">
 
+
+
+
 Here is where I will try to list posts.
+
+{sortedPosts.map((post) =>
+    <p>{post.title}</p>
+ )}
+
+
+ <div>
+{sortedPosts.slice(0, 3).map((post) => (
+  <article>
+    <h1>{post.title}</h1>
+    <p>{post.description}</p>
+    <a href={post.url}>Read more</a>
+  </article>
+))}
+</div>
 
 </BaseLayout>
