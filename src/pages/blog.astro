@@ -11,26 +11,17 @@ allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
 ---
 <BaseLayout title="My Blog">
 
-
-
-
-Here is where I will try to list posts.
-
-{allPosts.map((post) =>
-    <p>{post.title}</p>
- )}
-
-
+<h1>Here is where I will try to list posts.</h1>
  <div>
-{allPosts.slice(0, 3).map((post) => (
-  <article>
-    <h1>{post.title}</h1>
-    <p>{post.url}</p>
-    <p>{post.description}</p>
-    <p>{new Date(post.date).toISOString().slice(0, 10)}</p>
-    <a href={post.url}>Read more</a>
-  </article>
-))}
+  {allPosts.slice(0, 3).map((post) => (
+    <article>
+      <h1>{post.title}</h1>
+      <p>{post.url}</p>
+      <p>{post.description}</p>
+      <p>{new Date(post.date).toISOString().slice(0, 10)}</p>
+      <a href={post.url}>Read more</a>
+    </article>
+  ))}
 </div>
 
 </BaseLayout>
