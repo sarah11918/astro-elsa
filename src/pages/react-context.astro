@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../layouts/BaseLayout';
+import { Markdown } from 'astro/components';
+import ContextApp from '../components/ContextApp.jsx';
+---
+
+<BaseLayout title="React Context">
+  <main>
+
+   
+
+    <p>Can I get an island of React context??</p>
+    <p>This box below is rendering a single hydrated ContextApp component</p>
+    
+    <ContextApp client:load />
+
+    <Markdown>
+    Following the example:
+    [Understand React useContext hook through Example](https://www.kindacode.com/article/understand-react-usecontext-hook-through-example/)
+
+    I have four files in /src/components:
+
+     1. RootContext.jsx that creates the context
+      ```js
+      import { createContext } from "react";
+      const RootContext = createContext();
+      export default RootContext;
+      ```
+
+    2. ContextApp.jsx (representing App from a typical React project) that wraps the App in a Context Provider and provides data values.
+
+    ```js
+    import React from "react";
+    import Child from "../components/Child.jsx";
+    import RootContext from "../components/RootContext.jsx";
+
+    const data = {
+      number: 123,
+      text: "ABC",
+      func: () => {
+        alert("Hello!");
+      },
+    };
+
+    function ContextApp() {
+      return (
+        <RootContext.Provider value={data}>
+          <Child/>
+        </RootContext.Provider>
+      );
+    }
+
+    export default ContextApp;
+    ```
+
+   
+    3. Child.jsx that simply renders a GrandChild component
+      ```js
+      import React from "react";
+      import GrandChild from "./GrandChild";
+
+      const Child = () => {
+        return <GrandChild />;
+      };
+
+      export default Child; 
+      ```
+
+      4. GrandChild.jsx that uses the context data from Root Context
+
+      ```js
+      import React, { useContext } from "react";
+
+      import RootContext from "../components/RootContext.jsx";
+
+      const GrandChild = () => {
+      
+      const data = useContext(RootContext);
+          return (
+            <div style={{border: "2px solid black"}}>
+              <p>{data.number}</p>
+              <p>{data.text}</p>
+              <p><button onClick={data.func}>A Button</button></p>
+            </div>
+          );
+      };
+
+      export default GrandChild;
+      ```
+    </Markdown>
+  </main>
+</BaseLayout>

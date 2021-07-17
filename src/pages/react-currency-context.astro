@@ -1,0 +1,185 @@
+---
+import BaseLayout from '../layouts/BaseLayout';
+import CurrencyApp from '../components/CurrencyApp.jsx';
+import { Markdown } from 'astro/components';
+---
+
+<BaseLayout title="React currency context">
+  <main>
+
+    <h1>Using Context in React to pass values to (grand!)child components without prop drilling</h1>
+    <p>This describes setting up an app component (CurrencyApp) that shares context with any/all of its descendents. It's just regular React, but I wanted to get the app component rendered inside an Astro page (react-currency-context.astro). I followed the excellent example from <a href="https://www.robinwieruch.de/react-usecontext-hook">Robin Wieruch</a>, and the only real difference is that even my main root app file is in src/components/ because it itself is a component for my Astro page.</p>
+    <p>These are my notes as I made sense of it!</p>   
+
+
+    <h2>What we have</h2>
+    <ul>
+    <li>DATA: an array of "book" objects e.g. id: 1, title: The Road to React, price: 19.99</li>
+    <li>a Book component, that creates a line item display for a single book</li>
+    <li>a Books component, that accepts a list of books and maps over it, making a "Book" out of each element</li>
+    <li>a root App, that returns the Book component </li>
+    </ul>
+
+    <h3>What we want</h3>
+    <p>We want to be able to specify a CURRENCY in the root app (remember, our prices are only numbers!) and have access to that currency in the Book component (grandchild of the App), who is responsible for creating the display.<p>
+
+    <p>But, if the root app defines the currency, then in order to pass that info all the way down to the Book component, we either pass a "currency" prop down to Books (which doesn't use it), who in turn passes it down again to Book.</p>
+    
+    <p>... Or, we create and use CONTEXT that can be shared by all of the root App's descendents. </p>
+
+    <p>To do this, we:</p>
+    <ul>
+    <li>create some currency context</li>
+    <li>wrap our root App in a context provider, where we can specify our value for currency (e.g. "€" or "$")</li>
+    <li>use the context ONLY IN THE EXACT COMPONENTS WHO ACTUALLY USE IT (i.e. Book but not Books)</li>
+    </ul>
+    
+
+    <h3>Makin' Context . . . </h3>
+    <img src="/images/copies.gif" width="200" alt="Rob Schneider's 'Makin' Copies' character from SNL"/>
+    <p>(No one else was watching SNL in the early 90s??)</p>
+    <Markdown>
+    ```js
+    //Create the file src/components/CurrencyContext.jsx
+    import { createContext } from 'react';
+
+    const CurrencyContext = createContext();
+
+    export default CurrencyContext
+    ```
+    </Markdown>
+<h3>Wrappin' Context . . . </h3>
+<Markdown>
+    ```js
+    //Create the file src/components/CurrencyApp.jsx
+      import React, { useContext } from 'react';
+      import CurrencyContext from '../components/CurrencyContext.jsx';
+      import Books from '../components/Books.jsx';
+      
+      const CurrencyApp = () => {
+        return (
+          <CurrencyContext.Provider value="€"> //Here, we provide the value for "currency" for all descendents
+            <Books list={DATA} /> 
+          </CurrencyContext.Provider>
+        );
+      };
+      
+      export default CurrencyApp;
+    ```
+    
+  </Markdown>
+    
+     <h3>Usin' Context . . . </h3>
+     <Markdown>
+      ```js
+        //Create the file src/components/Book.jsx
+        import React, { useContext } from 'react';
+        import CurrencyContext from '../components/CurrencyContext.jsx'
+
+        const Book = ({ item }) => {
+          const currency = useContext(CurrencyContext); //This is how we uu-use it!
+          return (
+            <li>
+              {item.title} - {item.price} {currency} //<-Now, we can access "currency"
+            </li>
+          );
+        };
+
+        export default Book
+      ```
+    </Markdown>
+    
+    <h3>Avoidin' Context . . . </h3>
+     <Markdown>
+      ```js
+      //Create the file src/components/Books.jsx
+      import React from 'react'; //Look, Ma - no context!
+      import Book from '../components/Book';
+
+      const Books = ({ list }) => {
+        return (
+          <ul>
+            {list.map((item) => (
+              <Book key={item.id} item={item} />
+            ))}
+          </ul>
+        );
+      };
+
+      export default Books
+      ```
+    </Markdown>
+
+<h3>Providing Data</h3>
+<p>You can provide your data to your component however you'd like. For simplicity's sake, I'm just going to manually enter an array right in the CurrencyApp file. But, you can certainly put this in another file, fetch from an external source etc.</p>
+<p>So, with some data, my CurrencyApp.jsx component looks like this:
+    <Markdown>
+    ```js
+      //src/components/CurrencyApp.jsx - now with DATA
+      import React, { useContext } from 'react';
+      import CurrencyContext from '../components/CurrencyContext';
+      import Books from "../components/Books.jsx";
+      
+      const DATA = [
+        {
+          id: '1',
+          title: 'The Road to React',
+          price: 19.99,
+        },
+        {
+          id: '2',
+          title: 'The Road to GraphQL',
+          price: 29.99,
+        },
+        {
+          id: '3',
+          title: 'The Road to GastbyJS',
+          price: 29.99,
+        },
+        {
+          id: '4',
+          title: 'The Rocket to Astro!',
+          price: 29.99,
+        },
+      ];
+      
+      const CurrencyApp = () => {
+        return (
+          <CurrencyContext.Provider value="€">
+            <Books list={DATA} />
+          </CurrencyContext.Provider>
+        );
+      };
+      
+      export default CurrencyApp;
+    ```
+    
+    </Markdown>
+
+<h2>The Astro Bits</h2>
+<p>To render my App component in an Astro (.astro) page...<p>
+<ul>
+  <li>import the component in the front matter (you'll probably already be importing a layout of some kind) </li>
+  <li>include the component (<i>with some kind of hydration</i> if it is interactive, like a button, and uses JavaScript)</li>
+</ul>
+<Markdown>
+  ```js
+---
+import BaseLayout from '../layouts/BaseLayout';
+import CurrencyApp from '../components/CurrencyApp.jsx';
+---
+<BaseLayout title = "React Currency Context">
+   <main>
+    <CurrencyApp /> // or e.g. <CurrencyApp client:load />
+  </main>
+</BaseLayout>
+  ```
+</Markdown>
+<h2>Drumroll please . . .</h2>
+<p>And, here's what we get:</p>
+    <hr />
+    <CurrencyApp client:load/> 
+
+
+  </main>
+</BaseLayout>
