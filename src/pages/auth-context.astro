@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../layouts/BaseLayout';
+import AuthApp from '../components/AuthApp.jsx';
+import { Markdown } from 'astro/components';
+---
+
+<BaseLayout title="Auth State Context">
+  <main>
+    <AuthApp client:load />
+    <Markdown>
+
+Here is the code for this page, to get the above React AuthApp to render:
+
+```js
+---
+import BaseLayout from '../layouts/BaseLayout';
+import AuthApp from '../components/AuthApp.jsx';
+import { Markdown } from 'astro/components';
+---
+
+<BaseLayout title="Auth State Context">
+  <main>
+    <AuthApp client:load />
+  </main>
+</BaseLayout />
+```
+
+And this is the AuthApp.jsx that's being rendered.
+
+```js
+import React, { useState } from 'react';
+import LogInButton from '../components/LoginButton.jsx';
+import LogOutButton from '../components/LogoutButton.jsx';
+import AuthContext from '../components/AuthContext.jsx';
+
+const AuthApp = () => {
+   const [auth, setAuth] = useState(false);
+   const login = () => {
+      setAuth(true);
+   };
+   const logout = () => {
+      setAuth(false);
+   };
+   return (
+      <>
+      <AuthContext.Provider
+            value={{ auth: auth, login: login, logout: logout }}
+      >
+      <p>{auth ? 'Yay! You are logged In.' : 'You need to click to log in.'}</p>
+      <LogInButton />
+      <LogOutButton />
+      </AuthContext.Provider>
+      </>
+   );
+};
+export default AuthApp;
+```
+    </Markdown>
+  </main>
+</BaseLayout>
