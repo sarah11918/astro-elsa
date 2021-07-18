@@ -50,7 +50,7 @@ const AuthApp = () => {
       <AuthContext.Provider
             value={{ auth: auth, login: login, logout: logout }}
       >
-      <p>{auth ? 'Yay! You are logged In.' : 'You need to click to log in.'}</p>
+      <p>{auth ? 'Yay! You are logged in.' : 'You need to click to log in.'}</p>
       <LogInButton />
       <LogOutButton />
       </AuthContext.Provider>
@@ -67,9 +67,9 @@ With this context...
 
 import React, { createContext } from 'react';
 
-const AuthContext = createContext({
+const AuthContext = createContext({ 
    auth: null,
-   login: () => {},
+   login: () => {}, //For the sake of playing with context, I'm holding these functions in context, too. Normally, I wouldn't bother.
    logout: () => {},
 });
 export default AuthContext;

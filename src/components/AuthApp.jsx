@@ -17,7 +17,7 @@ const AuthApp = () => {
             value={{ auth: auth, login: login, logout: logout }}
       >
       <p>Your logged in status: {`${auth}`} </p>
-      <p>{auth ? 'Yay! You are logged In.' : 'You need to click to log in.'}</p>
+      <p>{auth ? 'Yay! You are logged in.' : 'You need to click to log in.'}</p>
       <LogInButton />
       <LogOutButton />
       </AuthContext.Provider>
