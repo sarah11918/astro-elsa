@@ -171,7 +171,7 @@ export default CurrencyApp;
  - I have *an App whose return is wrapped in context*, and 
  - I *import and use the useContext hook in any (but only those) descendent components individually* who rely on data passed as an attribute from the context provider.
 
-## The Astro Bits
+## The Astro Bits - rendering context-laden React component
 
 To render my App component in an Astro (.astro) page...
 
@@ -340,7 +340,7 @@ And, here's what we get. Try clicking the buttons!
 
 ## The Astro bits - "Islands of React"
 
-write here about islands of react, and where context can and can't be shared
+write here about islands of react, and where context can and can't be shared -- relate it to state, which will be another post
 
 ## In Summary . . .
 
@@ -355,9 +355,14 @@ What happens when I actually try to reuse that button somewhere else in the syst
 Similarly, my Book component needs to render a currency symbol to display a line item for a book, and right now it can't perform its one job without knowing which symbol to use. Where should it get that information from, really? Context from the root of the App? Good question! Glad I don't have to care because I'm *only practicing using context* right now, not trying to make a sensible design! ;) So I'm making the choice to make that value available via shared context, but not for any particular (and perhaps flying in the face of any good!) design reasons.
 
 ## Credits
--Robin Wieruch - looking 5EVA for an example
--cassidoo - Hooks scrimba course
--bob ziroll - Intro to React bootcamp
+
+- [Robin Wieruch](https://www.robinwieruch.de/react-usecontext-hook) - I was looking *5EVA* for an example to work through that was easy-to-understand, and made a bit more sense to discuss in words as a problem. (i.e. "Books" and "currency symbols of their prices" rather than "Child and "Grandchild" components and "context value 42"). Also, and why is this a thing, but so few blog posts I found with code examples mention **which file** the code snippet is coming from! When you're working with multiple components that use each other, it helps to be explicit about in which component stuff is happening. I appreciate that Robin's blog post does that!
+
+- [Cassidy Williams / cassidoo](https://cassidoo.co/) - Cassidy makes a ton of great content, but my introduction to her was through her [Scrimba Building Reusable React](https://scrimba.com/learn/reusablereact) course. I took this course when it was very new (early preview!), and when *I* was very new to React, so it did feel a little advanced at the time. But even when I would think, "I'm going to have to come back to this again..." I knew it was an excellent foundation that I would grow into. Is it funny that one of the things I remember most, off the top of my head a year later, is Cassidy's voice telling me not to overuse Context?? I think that's great!
+
+- [Bob Ziroll](https://twitter.com/bobziroll) - Bob's Scrimba courses [Learn React for Free](https://scrimba.com/learn/learnreact) and [The React Bootcamp](https://scrimba.com/learn/react) were soooo good. Full stop. As a former teacher and employer/mentor/trainer of tutors, I constantly fight against the tendency to evaluate an instructor while I'm simply trying to be a student myself. It's very distracting, and of course, it can sometimes drift towards critical thoughts like, "Well, why didn't he just say *that*?" or "It would have helped to have seen *this* example before that one."  In Bob's case, though, I had to tune out the "Wow, he's really very, very good!" noise ALL THE TIME. Pretty sure Bob is why I'm doing React AT ALL.
+
+- [J. B. Rainsberger](https://jbrains.ca) - Probably gonna have to credit Joe on LOTS of posts going forward, because Joe. But in this case, we had an excellent discussion about design patterns. His context-skepticism was helpful to prompt me to think carefully about use case. By asking a ton of questions, (including, but not limited to, the thinly-veiled question, "Do you see why this is terrible?") he led me to some more understanding about Astro's "Islands of React," which was the whole reason for doing this little example in the first place!
 
 
 
