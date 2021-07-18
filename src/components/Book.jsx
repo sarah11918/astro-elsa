@@ -3,11 +3,11 @@ import CurrencyContext from '../components/CurrencyContext.jsx';
 import BookBuyButton from '../components/BookBuyButton.jsx';
 
 const Book = ({ item }) => {
-  const currency = useContext(CurrencyContext);
+  const { currency } = useContext(CurrencyContext);
  
   return (
     <li>
-      {item.title} - {item.price} {currency} <BookBuyButton />
+      {item.title} - {item.price} {currency} {' '} <BookBuyButton />
     </li>
   );
 };

@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 
-import BookContext from "../components/BookContext.jsx";
+import CurrencyContext from "../components/CurrencyContext.jsx";
 
 const BookBuyButton = () => {
-  const data = useContext(BookContext);
+  const { buy } = useContext(CurrencyContext);
   return (
-      <p><button onClick={data.buy}>Buy!</button></p>
+      <button onClick={buy}>Buy!</button>
   );
 };
 
