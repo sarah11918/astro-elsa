@@ -12,6 +12,8 @@ import { Markdown } from 'astro/components';
 Here is the code for this page, to get the above React AuthApp to render:
 
 ```js
+//src/pages/auth-context.astro
+
 ---
 import BaseLayout from '../layouts/BaseLayout';
 import AuthApp from '../components/AuthApp.jsx';
@@ -25,9 +27,10 @@ import { Markdown } from 'astro/components';
 </BaseLayout />
 ```
 
-And this is the AuthApp.jsx that's being rendered.
+And this is the AuthApp.jsx component that's being rendered.
 
 ```js
+//src/components/AuthApp.jsx
 import React, { useState } from 'react';
 import LogInButton from '../components/LoginButton.jsx';
 import LogOutButton from '../components/LogoutButton.jsx';
@@ -43,6 +46,7 @@ const AuthApp = () => {
    };
    return (
       <>
+      <p>Your logged in status: {`${auth}`} </p>
       <AuthContext.Provider
             value={{ auth: auth, login: login, logout: logout }}
       >
@@ -55,6 +59,60 @@ const AuthApp = () => {
 };
 export default AuthApp;
 ```
+
+With this context... 
+
+```js
+// src/components/AuthContext.jsx
+
+import React, { createContext } from 'react';
+
+const AuthContext = createContext({
+   auth: null,
+   login: () => {},
+   logout: () => {},
+});
+export default AuthContext;
+```
+
+and some external button components that also accept their functions through context.
+
+```js
+//Login Button at src/components/LoginButton.jsx
+import React, { useContext } from 'react';
+import AuthContext from '../components/AuthContext.jsx';
+
+const LoginButton = () => {
+   const auth = useContext(AuthContext);
+   return (
+      <>
+         <button onClick={auth.login}>Login</button>
+      </>
+   );
+};
+export default LoginButton;
+```
+
+```js
+//Logout Button at src/components/LogoutButton.jsx
+import React, { useContext } from 'react';
+import AuthContext from '../components/AuthContext.jsx';
+
+const LogoutButton = () => {
+   const auth = useContext(AuthContext);
+   return (
+      <>
+         <button onClick={auth.logout}>Click To Logout</button>
+      </>
+   );
+};
+export default LogoutButton;
+```
+
+## Credits
+
+[Rahul Bansal's React useContext Hook tutorial](https://www.tutorialspoint.com/reactjs-usecontext-hook)
+
     </Markdown>
   </main>
 </BaseLayout>
