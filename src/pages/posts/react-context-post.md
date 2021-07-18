@@ -18,7 +18,7 @@ So, I wanted to take a deep dive into a simple example to explore React context 
 
 This is not necessarily a design recipe to follow, although it is a correct, working implementation of React context that you can use as a pattern, if that's what you're looking for. I say it's not a design recipe because, as we'll see, sometimes you don't actually want to use context at all! Sometimes, the benefits from using context to get data from A to B *don't* outweigh the risks and tradeoffs! And that's cool, but I want to explore how context is working so I can understand it when it *does* make sense to use it... and so that I can use it when that choice has already been made for me and I have to live with it, like in my Gatsby project.
 
-So if at any point you find yourself asking, "K, but why would you even do it like that?" . . . (a) Great question! You should always be asking that! and 2. It's because I'm practicing, testing the limits of, and yes, totally abusing the hook!
+So if at any point you find yourself asking, "K, but why would you even do it like that?" . . . (a) Great question! That shows real thought and care about what you're doing, and will take you far! and 2. It's because I'm practicing, testing the limits of, and yes, totally abusing the hook! (brb, starting a petition to add abuseContext() as the next official React hook.)
 
 I used the excellent example from <a href="https://www.robinwieruch.de/react-usecontext-hook">Robin Wieruch</a> and made extensive notes-to-self along the way! 
 
@@ -353,5 +353,11 @@ But, data that is passed this way is only available through context. A component
 What happens when I actually try to reuse that button somewhere else in the system? Do I still have access to that context? Can I easily test that component in isolation? Does the "handle clicking on a buy button" function really need to be stored separately from the button? Is any other component, other than a "Buy" button actually going to use it? (I mean, maybe yes. I don't know what you're doing. I'm sure I could create a scenario where that does make some sense. Every design choice is a tradeoff, and it makes sense to think through the consequences of these choices.)
 
 Similarly, my Book component needs to render a currency symbol to display a line item for a book, and right now it can't perform its one job without knowing which symbol to use. Where should it get that information from, really? Context from the root of the App? Good question! Glad I don't have to care because I'm *only practicing using context* right now, not trying to make a sensible design! ;) So I'm making the choice to make that value available via shared context, but not for any particular (and perhaps flying in the face of any good!) design reasons.
+
+## Credits
+-Robin Wieruch - looking 5EVA for an example
+-cassidoo - Hooks scrimba course
+-bob ziroll - Intro to React bootcamp
+
 
 
