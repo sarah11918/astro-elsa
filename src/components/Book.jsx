@@ -7,7 +7,7 @@ const Book = ({ item }) => {
  
   return (
     <li>
-      {item.title} - {item.price} {currency} {' '} <BookBuyButton />
+      {item.title} - {item.price} {currency} &nbsp;&nbsp;&nbsp;<BookBuyButton />
     </li>
   );
 };

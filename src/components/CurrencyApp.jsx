@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import CurrencyContext from '../components/CurrencyContext.jsx';
 import Books from "../components/Books.jsx";
  
@@ -29,7 +29,7 @@ const DATA = {
   ],
   
   buy: () => {
-    alert("Sorry, this is just a test!");
+    alert("Sorry, you can't buy. This is just a test!");
   },
 
   currency: "$",
