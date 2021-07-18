@@ -192,12 +192,12 @@ import CurrencyApp from '../components/CurrencyApp.jsx';
 ```
 
 ... and this is what we get:
-
+***
 - The Road to React - 19.99 $
 - The Road to GraphQL - 29.99 $
 - The Road to GastbyJS - 29.99 $
 - The Rocket to Astro! - 29.99 $  
-
+***
 Note that we did not need to hydrate this component at all; although JavaScript is executed in order to produce the formatted list of books, the final output is entirely HTML. 
 
 (This is what Astro means when they say, "Ships with less JavaScript!" The JavaScript is executed server-side, at build, to render HTML and pass it along to the browser. You really have to *mean it* if you want to send JavaScript to the end user!)
