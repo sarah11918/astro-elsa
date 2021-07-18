@@ -198,7 +198,7 @@ import CurrencyApp from '../components/CurrencyApp.jsx';
 - The Road to GastbyJS - 29.99 $
 - The Rocket to Astro! - 29.99 $  
 
-Note that we did not need to hydrate this component at all; while JavaScript is executed in order to produce the formatted list of books, the final output is entirely HTML. 
+Note that we did not need to hydrate this component at all; although JavaScript is executed in order to produce the formatted list of books, the final output is entirely HTML. 
 
 (This is what Astro means when they say, "Ships with less JavaScript!" The JavaScript is executed server-side, at build, to render HTML and pass it along to the browser. You really have to *mean it* if you want to send JavaScript to the end user!)
 
@@ -269,9 +269,9 @@ const CurrencyApp = () => {
 export default CurrencyApp;
 ```
 
-Now, each component that uses some data from the parent root App will import CurrencyContext and access only the object properties that they use. They have access to the whole object, but I will just destructure out any object properties actually needed when using the shared context. 
+Now, each component that uses some data from the parent root App will import CurrencyContext (and access only the object properties that they use. They have access to the whole object, but I will just destructure out any object properties actually needed when using the shared context. 
 
-(Note: in this example, each component happens to only use exactly one object property from the shared context, and a different one in each component... probably another sign that I should examine whether in fact I *really* want to do all this via context! But, I want to practice context, so I want to see what it looks like. That's the only reason we're choosing a design like this.)
+(Note: in this example, each component happens to only use exactly one object property from the shared context, and a different one in each component... probably another sign that if I were *designing* here, I should examine whether in fact I *really* want to do all this via context! And, that name: CurrencyContext? Ugh. Context is so much more than currency now! When your name sucks, that's probably another sign that you're heading into dangerous waters. If I were truly *designing* this app, I'd like to think I would rename my context, and change the name in all my files. (You would, right? Because you're responsible? You've never let long-established names become meaningless, or worse, misleading?) But, I realllly just want to practice context, design be damned, so put on your lifejacket!)
 
 ```js
 // src/components/Books.jsx
