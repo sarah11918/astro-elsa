@@ -1,8 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import FamilyMember from '../components/FamilyMember.astro';
-import Rainsberger from '../components/Rainsberger.astro';
-import ButtonTwo from '../components/ButtonTwo.astro';
+import FamilyMember from '../aatesting/FamilyMember.astro';
+import Rainsberger from '../aatesting/Rainsberger.astro';
+import RainsbergerList from '../aatesting/RainsbergerList.astro';
+import ButtonTwo from '../aatesting/ButtonTwo.astro';
 ---
 <style>
   .luxury {
@@ -31,6 +32,13 @@ import ButtonTwo from '../components/ButtonTwo.astro';
 
 
 <BaseLayout>
+<h2>Testing styles, slots, files and stuff...</h2>
+<RainsbergerList>
+<li>Sarah</li>
+<li>Joe</li>
+<li>Hobbes</li>
+</RainsbergerList>
+
 
 <ButtonTwo>Page Button</ButtonTwo>
   <Rainsberger><p>Sarah<p></Rainsberger>
