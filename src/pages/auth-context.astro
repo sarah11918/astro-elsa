@@ -6,10 +6,15 @@ import { Markdown } from 'astro/components';
 
 <BaseLayout title="Auth State Context">
   <main>
-    <AuthApp client:load />
-    <Markdown>
 
-Here is the code for this page, to get the above React AuthApp to render:
+   <Markdown>
+      Here is a React component that can hold state and share context (within the component, in a "React Island.")
+   </Markdown>
+   <hr />
+   <AuthApp client:load />
+   <hr />
+   <Markdown>
+      Here is the code for this page:
 
 ```js
 //src/pages/auth-context.astro
@@ -22,9 +27,21 @@ import { Markdown } from 'astro/components';
 
 <BaseLayout title="Auth State Context">
   <main>
-    <AuthApp client:load />
+
+   <Markdown>
+      Here is a React component that can hold state (within the component, in a "React Island.")
+   </Markdown>
+   
+   <hr />
+   <AuthApp client:load />
+   <hr />
+   
+   <Markdown>
+      Here is the code for this page:
+   </Markdown>
+
   </main>
-</BaseLayout />
+</BaseLayout >
 ```
 
 And this is the AuthApp.jsx component that's being rendered.
@@ -109,9 +126,10 @@ const LogoutButton = () => {
 export default LogoutButton;
 ```
 
+<!--
 ## Credits
 
-[Rahul Bansal's React useContext Hook tutorial](https://www.tutorialspoint.com/reactjs-usecontext-hook)
+[Rahul Bansal's React useContext Hook tutorial](https://www.tutorialspoint.com/reactjs-usecontext-hook) -->
 
     </Markdown>
   </main>

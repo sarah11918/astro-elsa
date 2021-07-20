@@ -14,12 +14,12 @@ const AuthApp = () => {
    return (
       <>
       <AuthContext.Provider
-            value={{ auth: auth, login: login, logout: logout }}
-      >
-      <p>Your logged in status: {`${auth}`} </p>
-      <p>{auth ? 'Yay! You are logged in.' : 'You need to click to log in.'}</p>
-      <LogInButton />
-      <LogOutButton />
+               value={{ auth: auth, login: login, logout: logout }}
+         >
+         <p>Your logged in status: {`${auth}`} </p>
+         <p>{auth ? 'Yay! You are logged in.' : 'You need to click to log in.'}</p>
+         <LogInButton />
+         <LogOutButton />
       </AuthContext.Provider>
       </>
    );
