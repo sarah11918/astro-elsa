@@ -2,7 +2,6 @@
 const {title} = Astro.props;
 import { Markdown } from 'astro/components';
 import styles from '../styles/global.css';
-import ButtonTwo from '../components/ButtonTwo.astro';
 ---
 <html>
   <head>
@@ -12,7 +11,7 @@ import ButtonTwo from '../components/ButtonTwo.astro';
   <body>
     <nav>
       <Markdown>I'm a common layout. You are viewing **{title}**</Markdown>
-      <a href="/">Home </a>
+      <a href="/">Home</a>&nbsp &nbsp
       <a href="/react-components">React</a>&nbsp &nbsp
       <a href="/remote-markdown">Remote Markdown</a>&nbsp &nbsp
       <a href="/data-fetching">Data Fetching</a>&nbsp &nbsp
