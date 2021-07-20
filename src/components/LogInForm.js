@@ -34,8 +34,8 @@ const LoginForm = () => {
         <input type="text" name="email" value={data.email} onChange={handleChange} />
       </div>
       <div>
-        <label htmlFor="email">Password</label><br />
-        <input type="text" name="password" value={data.password} onChange={handleChange} />
+        <label htmlFor="password">Password</label><br />
+        <input type="password" name="password" value={data.password} onChange={handleChange} />
       </div>
       {data.error ? <p>{data.error}</p> : null}
       <input type="submit" value="login" />

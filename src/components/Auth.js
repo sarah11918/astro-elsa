@@ -1,13 +1,12 @@
 import React, { useEffect, useState, createContext } from "react";
 import firebase from "firebase/app";
+import firebaseConfig from './extensions/config.js'
 import "firebase/auth";
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
-
-  const [currentUser, setCurrentUser] = useState(null
     
     // () => {
     // const currentUser = firebase.auth().currentUser;
@@ -16,12 +15,14 @@ export const AuthProvider = ({ children }) => {
     // }
   );
 
+  const [currentUser, setCurrentUser] = useState(null);
   useEffect(() => {
-    firebase.auth().onAuthStateChanged(firebaseUser => {
-      setCurrentUser(firebaseUser);
+    firebase.initializeApp(firebaseConfig)
+    firebase.auth().onAuthStateChanged((user) => {
+      setCurrentUser(user);
       setLoading(false);
     });
-  }, [])
+  }, []);
 
   if (loading) {
     return <p>Loading...</p>;
