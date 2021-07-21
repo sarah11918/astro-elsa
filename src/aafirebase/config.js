@@ -2,7 +2,7 @@ import firebase from "firebase/app";
 import "firebase/auth";
 
 export const firebaseConfig = {
-  apiKey: "AIzaSyCOlTCQLeAZjwTKqvxzx3rJlheZ-apwQPk",
+  apiKey: process.env.RrFirebaseKey,
   authDomain: "rentificatr.firebaseapp.com",
   projectId: "rentificatr",
   storageBucket: "rentificatr.appspot.com",
