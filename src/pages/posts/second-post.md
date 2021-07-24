@@ -2,7 +2,7 @@
 title: Second Post
 author: Sarah
 date: 2021-07-12
-description: Electric Booglaloo
+description: Post 2
 layout: ../../layouts/MarkdownPostLayout.astro
 ---
 
