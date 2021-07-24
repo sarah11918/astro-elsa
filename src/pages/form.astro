@@ -1,13 +1,18 @@
 ---
 import BaseLayout from '../layouts/BaseLayout';
 import Form from '../components/Form.js';
+
 import { Markdown } from 'astro/components';
+
 ---
 
 <BaseLayout title="React Form">
   <main>
     <p>A React form with controlled components holding data in state</p>
+  
     <Form client:load />
+    
+   
 
     <Markdown>
     Here's the code for this page:

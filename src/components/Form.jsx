@@ -5,7 +5,6 @@ const Form = () => {
     name: "",  
     language: "",
   })
-
  
   const handleChange = event => {
     setData({...data, [event.target.name]: event.target.value})
@@ -13,7 +12,7 @@ const Form = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    alert(`Thanks, ${data.name}! I'll speak to you in ${data.language}.`)
+    alert(`Thanks, ${data.name}! I'll speak to you in ${data.language} and you'll pay in ${data.currency}.`)
     setData({ name: "",  language: ""})
   }
 
