@@ -10,10 +10,14 @@ import RecentTweet from '../components/RecentTweet.jsx';
 
   1. install ["react-twitter-widgets"](https://github.com/andrewsuzuki/react-twitter-widgets)
   2. configure using [Twitter documentation](https://developer.twitter.com/en/docs/twitter-for-websites/timelines/overview)
-
   </Markdown>
-  <RecentTweet client:load />
+ 
+  <RecentTweet user="sarah11918" client:load />
+
+  <RecentTweet user="jbrains" client:load />
+  
   <Markdown>
+
   Code for this page:
   ```js
     ---
@@ -26,7 +30,8 @@ import RecentTweet from '../components/RecentTweet.jsx';
       <Markdown>
       ## Here is a tweet embedded via "react-twitter-widgets"
       </Markdown>
-      <RecentTweet client:load />
+      <RecentTweet user="sarah11918" client:load />
+      <RecentTweet user="jbrains" client:load />
     </main>
   </BaseLayout>
   ```
@@ -37,13 +42,13 @@ import RecentTweet from '../components/RecentTweet.jsx';
   import React from "react";
   import { Timeline } from "react-twitter-widgets";
 
-  const RecentTweet = () => (
+  const RecentTweet = ({user}) => (
     <>
       <div className="tweet">
         <Timeline
           dataSource={{
             sourceType: "profile",
-            screenName: "sarah11918"
+            screenName: user,
           }}
           options={{
             //height: "10",

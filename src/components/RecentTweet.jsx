@@ -1,13 +1,13 @@
 import * as React from "react";
 import { Timeline } from "react-twitter-widgets";
 
-const RecentTweet = () => (
+const RecentTweet = ({ user }) => (
   <>
     <div className="tweet">
       <Timeline
         dataSource={{
           sourceType: "profile",
-          screenName: "sarah11918"
+          screenName: user
         }}
         options={{
           //height: "10",
