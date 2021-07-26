@@ -1,0 +1,43 @@
+---
+const {title} = Astro.props;
+import { Markdown } from 'astro/components';
+import styles from '../styles/global.css';
+---
+<html>
+  <head>
+    <title>{title}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/themes/prism-tomorrow.css">
+  </head>
+  <body>
+    <nav>
+      <Markdown>I'm a common layout. You are viewing **{title}**</Markdown>
+      <a href="/">Home</a>&nbsp &nbsp
+      <a href="/react-components">React</a>&nbsp &nbsp
+      <a href="/remote-markdown">Remote Markdown</a>&nbsp &nbsp
+      <a href="/data-fetching">Data Fetching</a>&nbsp &nbsp
+      <a href="/code-samples">Code Snippets</a>&nbsp &nbsp
+      <a href="/blog">Blog</a>&nbsp &nbsp
+      <a href="/about">About</a>&nbsp &nbsp
+      <a href="/react-context">React Context</a>&nbsp &nbsp
+      <a href="/auth-context">Auth State Context</a>&nbsp &nbsp
+      <a href="/form">React Form</a>&nbsp &nbsp
+      <a href="/recent-tweet">Embedded Tweet</a>
+
+    </nav>
+   <hr>
+    <slot />
+    <footer>
+      <hr>
+      <div>
+      <Markdown>
+      Look at me, I'm a footer on **{title}**
+      </Markdown>
+      <p>Built by <a href="https://www.twitter.com/sarah11918">@sarah11918</a> on a Chromebook via <a href="https://codesandbox.io">CodeSandbox</a> ~ <a href="http://astro.build">#BuiltWithAstro</a>  <img src="/images/astro.gif" width="25" /></p>
+      
+      
+      </div>
+    </footer>
+
+
+  </body>
+</html>
