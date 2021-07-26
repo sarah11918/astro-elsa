@@ -14,12 +14,14 @@ const Form = () => {
     event.preventDefault()
     alert(`Thanks, ${data.name}! I'll speak to you in ${data.language} and you'll pay in ${data.currency}.`)
     setData({ name: "",  language: ""})
+    document.getElementById("myform").classList.add("submitted")
   }
+
 
   return(
     <>
     <h3>My Form</h3>
-    <form onSubmit={handleSubmit}>
+    <form id="myform" onSubmit={handleSubmit}>
       <div>
         <label htmlFor="name">First name</label>
         <br />

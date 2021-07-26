@@ -3,6 +3,7 @@ import { Timeline } from "react-twitter-widgets";
 
 const RecentTweet = ({ user }) => (
   <>
+    <h2> My user prop is {user} </h2>
     <div className="tweet">
       <Timeline
         dataSource={{
@@ -11,7 +12,7 @@ const RecentTweet = ({ user }) => (
         }}
         options={{
           //height: "10",
-          width: "100",
+          width: "300",
           tweetLimit: "1"
         }}
       />
