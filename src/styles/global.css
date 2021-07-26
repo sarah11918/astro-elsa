@@ -4,17 +4,38 @@
   box-sizing: border-box;
 }
 
-
 html {
   scroll-behavior: smooth;
 }
 
 body {
   height: 100vh;
- 
 }
 
 img {
   display: block;
   max-width: 100%;
+}
+
+main {
+  width: 80%;
+  margin: 0 auto;
+}
+
+footer {
+  width: 90%;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+a.experiment {
+  font-size: 1.5rem;
+  display: block;
+  color: darkgreen;
+  text-decoration: none;
+}
+
+a.experiment:hover {
+  background: lightgreen;
+  font-style: italic;
 }

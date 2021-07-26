@@ -16,7 +16,6 @@ a.logo {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    margin: 1em .5em 0;
 }
 
 nav {
@@ -35,7 +34,7 @@ nav {
 .exit {
     width: 2em;
     float: right;
-    margin: .5em;
+    margin: .6em;
     cursor: pointer;
 }
 
@@ -56,7 +55,7 @@ nav {
 
 .open {
     cursor: pointer;
-    margin: .5em;
+    margin: .7em;
 }
 
 .nav-link .active a {

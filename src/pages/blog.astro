@@ -4,15 +4,17 @@ import { Markdown } from 'astro/components'
 let allPosts = Astro.fetchContent('./posts/*.md');
 allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-
-
 //let sortedPosts = allPosts.slice().sort((a, b) => b.ordinal - a.ordinal)
 
-//console.log(sortedPosts[0].date.toString())
 ---
 <BaseLayout title="My Blog">
+  <main>
+    <Markdown>
+    
+    ## The Code:
 
-<Markdown>This is **src/pages/blog.astro** which is generated from markdown files located in **src/pages/posts/** using: 
+    This is **src/pages/blog.astro** which is generated from markdown files located in **src/pages/posts/** using: 
+
 ```js
 ---
 let allPosts = Astro.fetchContent('./posts/*.md');
@@ -31,17 +33,24 @@ allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
   ))}
 </div>
  ```
+
+ ## The Content:
+ 
+ Here is the listing of the three most recent posts:
+
 </Markdown>
+
  <div>
   {allPosts.slice(0, 3).map((post) => (
     <article>
-      <h1>{post.title}</h1>
-      <p>{post.url}</p>
+      <h3>{post.title}</h3>
+      <p style="font-size: 0.8em;"><em>{post.url}</em></p>
       <p>{post.description}</p>
       <p>{new Date(post.date).toISOString().slice(0, 10)}</p>
-      <a href={post.url}>Read more</a>
+      <a style="font-size: 0.8em;" href={post.url}>Read more</a>
+      <hr>
     </article>
   ))}
 </div>
-
+</main>
 </BaseLayout>
