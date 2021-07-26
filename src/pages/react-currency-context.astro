@@ -193,10 +193,10 @@ import CurrencyApp from '../components/CurrencyApp.jsx';
 
 ... and this is what we get:
 ***
-- The Road to React - 19.99 $
-- The Road to GraphQL - 29.99 $
-- The Road to GastbyJS - 29.99 $
-- The Rocket to Astro! - 29.99 $  
+The Road to React - 19.99 $
+The Road to GraphQL - 29.99 $
+The Road to GastbyJS - 29.99 $
+The Rocket to Astro! - 29.99 $  
 ***
 Note that we did not need to hydrate this component at all; although JavaScript is executed in order to produce the formatted list of books, the final output is entirely HTML. 
 
@@ -305,8 +305,8 @@ const Book = ({ item }) => {
   const { currency } = useContext(CurrencyContext); //destructure just the currency symbol
  
   return (
-    <li>
-      {item.title} - {item.price} {currency} {' '} <BookBuyButton />
+    <li style={{lineHeight: "1.85em"}}>
+      <BookBuyButton />&nbsp; &nbsp; {item.title} - {item.price} {currency}
     </li>
   );
 };

@@ -132,8 +132,8 @@ const Book = ({ item }) => {
   const { currency } = useContext(CurrencyContext); //destructure just the currency symbol
  
   return (
-    <li>
-      {item.title} - {item.price} {currency} {' '} <BookBuyButton />
+    <li style={{lineHeight: "1.85em"}}>
+      <BookBuyButton /> &nbsp; &nbsp; {item.title} - {item.price} {currency}
     </li>
   );
 };

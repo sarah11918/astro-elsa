@@ -6,8 +6,8 @@ const Book = ({ item }) => {
   const { currency } = useContext(CurrencyContext);
  
   return (
-    <li>
-      {item.title} - {item.price} {currency} &nbsp;&nbsp;&nbsp;<BookBuyButton />
+    <li style={{lineHeight: "1.85em"}}>
+      <BookBuyButton />&nbsp; &nbsp; {item.title} - {item.price} {currency}
     </li>
   );
 };
