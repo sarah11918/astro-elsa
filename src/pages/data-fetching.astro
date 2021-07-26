@@ -6,6 +6,7 @@ const allPokemonResult = await allPokemonResponse.json();
 const allPokemon = allPokemonResult.results;
 ---
 <BaseLayout title="Data Fetching" >
+    <main>
     <h1>Fetching Data</h1>
     <h3>Here is an example of making an external API call</h3>
     {allPokemon.map((pokemon) => (<p>{pokemon.name}</p>))}
@@ -26,4 +27,5 @@ const allPokemon = allPokemonResult.results;
     </BaseLayout>
     ```
     </Markdown>
+    </main>
 </BaseLayout>

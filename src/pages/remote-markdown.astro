@@ -4,6 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const content = await fetch("https://raw.githubusercontent.com/sarah11918/astro-elsa/main/README.md").then((res) => res.text());
 ---
 <BaseLayout title = "Remote Markdown" >
+  <main>
   <Markdown>
     # This 
     is some local **Markdown** between two tags
@@ -29,5 +30,6 @@ const content = await fetch("https://raw.githubusercontent.com/sarah11918/astro-
   ```
   
   </Markdown>
+  </main>
 </BaseLayout>
 

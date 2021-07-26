@@ -8,10 +8,11 @@ console.log(`My date is a ${typeof content.date}`)
 
 ---
 <BaseLayout title = {content.title}>
-
+<main>
   <p>{content.url}<p>
   <h1>{content.title}</h1>
   <p>Written by: {content.author} on {content.date}</p>
   <p>{content.description}</p>
   <article><slot /></article>
+  <main>
 </BaseLayout>

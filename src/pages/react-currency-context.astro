@@ -5,6 +5,7 @@ import { Markdown } from 'astro/components';
 ---
 
 <BaseLayout title="React currency context">
+  <main>
   <Markdown>
  
 # Using Context in React to pass values to (grand!)child components without prop drilling - rendered in an Astro page
@@ -365,4 +366,5 @@ Similarly, my Book component needs to render a currency symbol to display a line
 - [J. B. Rainsberger](https://jbrains.ca) - Probably gonna have to credit Joe on LOTS of posts going forward, because Joe. But in this case, we had an excellent discussion about design patterns. His context-skepticism was helpful to prompt me to think carefully about use case. By asking a ton of questions, (including, but not limited to, the thinly-veiled question, "Do you see why this is terrible?") he led me to some more understanding about Astro's "Islands of React," which was the whole reason for doing this little example in the first place!
 
   </Markdown>
+  </main>
 </BaseLayout>

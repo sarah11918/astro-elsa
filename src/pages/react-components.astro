@@ -8,6 +8,7 @@ const characters = await fetch('https://finalspaceapi.com/api/v0/character?limit
  .then((res) => res.json());
 ---
 <BaseLayout title="React Component Playground" >
+<main>
 
 <h2>Here are some React Components...</h2>
 
@@ -16,5 +17,5 @@ const characters = await fetch('https://finalspaceapi.com/api/v0/character?limit
 <Counter client:visible />
 <hr>
 <Characters characters={characters} client:visible />
-
+</main>
 </BaseLayout>
