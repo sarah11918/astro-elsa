@@ -1,3 +1,20 @@
-body {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100vh;
+ 
+}
+
+img {
+  display: block;
+  max-width: 100%;
 }
