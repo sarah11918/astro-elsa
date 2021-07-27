@@ -1,0 +1,132 @@
+---
+const {title} = Astro.props;
+import { Markdown } from 'astro/components';
+import '../styles/nav.css';
+import '../styles/global.css';
+
+---
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/themes/prism-tomorrow.css">
+    <script
+      src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"
+      data-auto-a11y="true"
+    ></script>
+  </head>
+  <body>
+            
+  <header>
+            <a href="/" class="logo"><img src="/images/astro.gif" width="100%" /></a>
+            <svg height="40px" id="menu-btn" class="open" viewBox="0 0 32 32" >
+                <path fill="white" d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/>
+            </svg>
+            
+            <nav id="nav">
+                <svg viewBox="0 0 24 24" id="exit-btn" class="exit">
+                    <path id="exit" fill="white" d="M14.8,12l3.6-3.6c0.8-0.8,0.8-2,0-2.8c-0.8-0.8-2-0.8-2.8,0L12,9.2L8.4,5.6c-0.8-0.8-2-0.8-2.8,0   c-0.8,0.8-0.8,2,0,2.8L9.2,12l-3.6,3.6c-0.8,0.8-0.8,2,0,2.8C6,18.8,6.5,19,7,19s1-0.2,1.4-0.6l3.6-3.6l3.6,3.6   C16,18.8,16.5,19,17,19s1-0.2,1.4-0.6c0.8-0.8,0.8-2,0-2.8L14.8,12z" />
+                </svg>
+                
+                <div class="site-nav-inside">
+                <ul class="nav-list">
+                    <li class="nav-link"><a href="/">Home</a></li>
+                    <li class="nav-link"><a href="/about/">About</a></li>
+                    <li class="nav-link"><a href="/blog">Blog</a></li>
+                    <li class="nav-link"><a href="/experiments">Experiments</a></li>
+                </ul>
+                <div class="social-links social">
+                   <a href="https://twitter.com/sarah11918" class="button-circle">
+                    <span class="fab fa-twitter">
+             
+                    </span>
+                
+                  </a>
+                   <a href="https://flickr.com/sarahrainsberger" class="button-circle">
+                    <span class="fab fa-flickr">
+                   
+                    </span>
+                  
+                  </a>
+                  <a href="https://github.com/sarah11918" class="button-circle">
+                    <span class="fab fa-github">
+                   
+                    </span>
+                  
+                  </a>
+                  <a href="https://gitlab.com/sarah11918" class="button-circle">
+                    <span class="fab fa-gitlab">
+               
+                    </span>
+                
+                  </a>
+                  <a href="https://codesandbox.io/u/sarah11918" class="button-circle">
+                    <span class="fas fa-laptop-code">
+                   
+                    </span>
+                    
+                  </a>
+                   <a href="https://codepen.com/sarah11918" class="button-circle">
+                    <span class="fab fa-codepen">
+                  
+                    </span>
+                  
+                  </a>
+                </div>
+                </div>
+            </nav>
+            
+        </header>
+    <slot />
+    <footer>
+
+      
+  
+      <div class="social-links social-footer">
+                   <a href="https://twitter.com/sarah11918" class="button-circle">
+                    <span class="fab fa-twitter">
+             
+                    </span>
+                
+                  </a>
+                   <a href="https://flickr.com/sarahrainsberger" class="button-circle">
+                    <span class="fab fa-flickr">
+                   
+                    </span>
+                  
+                  </a>
+                  <a href="https://github.com/sarah11918" class="button-circle">
+                    <span class="fab fa-github">
+                   
+                    </span>
+                  
+                  </a>
+                  <a href="https://gitlab.com/sarah11918" class="button-circle">
+                    <span class="fab fa-gitlab">
+               
+                    </span>
+                
+                  </a>
+                  <a href="https://codesandbox.io/u/sarah11918" class="button-circle">
+                    <span class="fas fa-laptop-code">
+                   
+                    </span>
+                    
+                  </a>
+                   <a href="https://codepen.com/sarah11918" class="button-circle">
+                    <span class="fab fa-codepen">
+                  
+                    </span>
+                  
+                  </a>
+                </div>
+
+      <p><a class="footer-link" href="http://astro.build">#BuiltWithAstro</a> by <a class="footer-link" href="https://www.twitter.com/sarah11918">@sarah11918</a> on a Chromebook with <a class="footer-link" href="https://codesandbox.io">CodeSandbox</a></p>
+      
+     
+    </footer>
+<script src="/nav-utils.js"></script>
+  </body>
+</html>

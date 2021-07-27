@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@firebase/auth": "0.16.8",
-    "astro": "0.17.2",
+    "astro": "0.17.3",
     "firebase": "8.7.1",
     "node": "16.4.0",
     "react-router-dom": "5.2.0",
