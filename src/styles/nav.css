@@ -73,6 +73,32 @@ nav {
     transform: translateX(0);
 }
 
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top:2.5rem;
+    align-items: center;
+}
+
+.button-circle {
+    
+    align-items: center;
+    border: 2px solid #a1a1a1;
+    border-radius: 50%;
+    box-sizing: border-box;
+    display: inline-flex;
+    font-size: 1em;
+    height: 2.22222em;
+    justify-content: center;
+    line-height: 2.22222em;
+    padding: 0;
+    position: relative;
+    width: 2.22222em; }
+
+   svg {
+        color:#7B8994;
+       }
+
 @media (min-width: 500px) {
     .open, .exit {
         display: none;
@@ -105,5 +131,6 @@ nav {
         color: white;
     }
     
-    
+
+
 }
