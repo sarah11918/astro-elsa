@@ -114,6 +114,7 @@ svg {
 .site-branding {
   color: white;
   overflow: visible;
+  padding: 20px;
 }
 .site-title {
   color: white;
