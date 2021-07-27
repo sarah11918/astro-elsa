@@ -101,6 +101,7 @@ svg {
 
 .social-footer {
   visibility: hidden;
+  height: 0;
 }
 
 .site-header-vertical {
@@ -165,8 +166,9 @@ svg {
     visibility: visible;
     max-width: 50%;
     margin: 0.5em auto;
+    height: auto;
   }
   .button-circle {
-    display:none;
+    display:reset;
   }
 }
