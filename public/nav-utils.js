@@ -1,11 +1,20 @@
+document.getElementById("menu-btn").addEventListener("click", () => {
+  document.getElementById("nav").classList.add("open-nav");
+});
 
+document.getElementById("exit-btn").addEventListener("click", () => {
+  document.getElementById("nav").classList.remove("open-nav");
+});
 
-  document.getElementById("menu-btn").addEventListener("click", () => {
-    document.getElementById("nav").classList.add('open-nav')
-    }
-  )
+function displayWindowSize() {
+  var w = window.innerWidth;
+  if (w > 610) {
+    document.getElementById("header-container").classList.add('large-screen')
+  } else {
+    document.getElementById("header-container").classList.remove('large-screen')
+  }
+  
+}
 
-  document.getElementById("exit-btn").addEventListener("click", () => {
-    document.getElementById("nav").classList.remove('open-nav')
-    }
-  )
+window.addEventListener("resize", displayWindowSize);
+// document.getElementById("header").classList.add('sidebar')
