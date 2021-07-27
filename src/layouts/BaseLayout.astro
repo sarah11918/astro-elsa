@@ -20,7 +20,7 @@ import '../styles/global.css';
   <body>
             
   <header>
-            <a href="/" class="logo"><img src="/images/astro.gif" width="63" /></a>
+            <a href="/" class="logo"><img src="/images/astro.gif" width="100%" /></a>
             <svg height="40px" id="menu-btn" class="open" viewBox="0 0 32 32" >
                 <path fill="white" d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/>
             </svg>
@@ -37,7 +37,7 @@ import '../styles/global.css';
                     <li class="nav-link"><a href="/blog">Blog</a></li>
                     <li class="nav-link"><a href="/experiments">Experiments</a></li>
                 </ul>
-                <div class="social-links">
+                <div class="social-links social">
                    <a href="https://twitter.com/sarah11918" class="button-circle">
                     <span class="fab fa-twitter">
              
@@ -83,9 +83,45 @@ import '../styles/global.css';
     <footer>
 
       <div>
-      <Markdown>
-      Look at me, I'm a footer on **{title}**
-      </Markdown>
+  
+      <div class="social-links social-footer">
+                   <a href="https://twitter.com/sarah11918" class="button-circle">
+                    <span class="fab fa-twitter">
+             
+                    </span>
+                
+                  </a>
+                   <a href="https://flickr.com/sarahrainsberger" class="button-circle">
+                    <span class="fab fa-flickr">
+                   
+                    </span>
+                  
+                  </a>
+                  <a href="https://github.com/sarah11918" class="button-circle">
+                    <span class="fab fa-github">
+                   
+                    </span>
+                  
+                  </a>
+                  <a href="https://gitlab.com/sarah11918" class="button-circle">
+                    <span class="fab fa-gitlab">
+               
+                    </span>
+                
+                  </a>
+                  <a href="https://codesandbox.io/sarah11918" class="button-circle">
+                    <span class="fas fa-laptop-code">
+                   
+                    </span>
+                    
+                  </a>
+                   <a href="https://codepen.com/sarah11918" class="button-circle">
+                    <span class="fab fa-codepen">
+                  
+                    </span>
+                  
+                  </a>
+                </div>
 
       <p><a class="footer-link" href="http://astro.build">#BuiltWithAstro</a> by <a class="footer-link" href="https://www.twitter.com/sarah11918">@sarah11918</a> on a Chromebook with <a class="footer-link" href="https://codesandbox.io">CodeSandbox</a></p>
       

@@ -78,6 +78,7 @@ nav {
     flex-wrap: wrap;
     margin-top:2.5rem;
     align-items: center;
+    justify-content: space-evenly;
 }
 
 .button-circle {
@@ -99,7 +100,11 @@ nav {
         color:#7B8994;
        }
 
-@media (min-width: 500px) {
+    .social-footer {
+        visibility: hidden;
+    }
+
+@media (min-width: 610px) {
     .open, .exit {
         display: none;
     }
@@ -108,7 +113,7 @@ nav {
         visibility: unset;
         background: none;
         position: unset;
-        height: auto;
+        height: 0;
         opacity: 1;
         transform: translateX(0);
     }
@@ -129,6 +134,17 @@ nav {
     
     .nav-link .active a {
         color: white;
+    }
+
+    .social {
+        visibility: hidden;
+    }
+
+    .social-footer {
+        visibility: visible;
+        
+        max-width: 50%;
+        margin: 0.5em auto;
     }
     
 
