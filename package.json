@@ -10,7 +10,7 @@
   "dependencies": {
     "@firebase/auth": "0.16.8",
     "astro": "0.17.3",
-    "firebase": "8.7.1",
+    "react":"^17",
     "node": "^14.13.1",
     "react-router-dom": "5.2.0",
     "react-twitter-widgets": "1.10.0"
