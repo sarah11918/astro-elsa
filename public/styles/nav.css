@@ -1,4 +1,3 @@
-
 header {
   background: #3d5262;
   display: flex;
@@ -171,5 +170,4 @@ svg {
   .button-circle {
     display: reset;
   }
-
 }
