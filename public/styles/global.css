@@ -7,11 +7,13 @@
 html {
   scroll-behavior: smooth;
   height: 100vh;
+  width: 100%;
+  margin: 0;
 }
 
-body,
-html {
-  height: 100%;
+body 
+{
+
   width: 100%;
   margin: 0;
 }
@@ -33,6 +35,13 @@ img {
 main {
   width: 80%;
   margin: 0 auto;
+  min-height: 65%;
+}
+
+@media (min-width: 610px) {
+  main {
+    min-height: 65%;
+  }
 }
 
 footer {
