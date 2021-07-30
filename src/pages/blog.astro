@@ -37,8 +37,11 @@ allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
  ## The Content:
  
  Here is the listing of the three most recent posts:
-
 </Markdown>
+
+<p>(To troubleshoot: the `{post.url}` in my development environment is <em>/posts/first-post</em> but in my Netlify build, it's <em>/first-post</em>)</p>
+
+
 
  <div>
   {allPosts.slice(0, 3).map((post) => (
