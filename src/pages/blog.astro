@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { Markdown } from 'astro/components'
-let allPosts = Astro.fetchContent('./posts/*.md');
+let allPosts = Astro.fetchContent('../pages/posts/*.md');
 allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
 //let sortedPosts = allPosts.slice().sort((a, b) => b.ordinal - a.ordinal)
