@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const { title, url, preview, subreddit, author } = await fetch(`https://meme-api.herokuapp.com/gimme`)
+  .then(response => response.json())
+---
+<BaseLayout title="Meme Fetching">
+  <main style="margin: 0 auto">
+    <h2>{title}</h2>
+    <p style="font-size: 0.8rem">Submitted to r/{subreddit} by {author}</p>
+    <img src="{preview[1]}">
+    <hr>
+  </main>
+</BaseLayout>
+
+<!-- response object format
+{
+  "postLink": "https://redd.it/ov4m53",
+  "subreddit": "memes",
+  "title": "Finally after só long i can eat",
+  "url": "https://i.redd.it/kx6dpmh6wie71.jpg",
+  "nsfw": false,
+  "spoiler": false,
+  "author": "jsjzn",
+  "ups": 7802,
+  "preview": [
+    "https://preview.redd.it/kx6dpmh6wie71.jpg?width=108&crop=smart&auto=webp&s=410c9e943979e879f8d29a2569ceb208deb8706b",
+    "https://preview.redd.it/kx6dpmh6wie71.jpg?width=216&crop=smart&auto=webp&s=4b0cb47191e06b3e4820262a78bba96a5f0e27b1",
+    "https://preview.redd.it/kx6dpmh6wie71.jpg?width=320&crop=smart&auto=webp&s=bf607a7c84ccd2205072ffea5e5feef03c2c653d",
+    "https://preview.redd.it/kx6dpmh6wie71.jpg?width=640&crop=smart&auto=webp&s=1bd13ec5938aeab1a77ecf414a2dc391e2b044c7"
+  ]
+}
+-->
