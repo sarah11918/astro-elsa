@@ -11,9 +11,7 @@ html {
   margin: 0;
 }
 
-body 
-{
-
+body {
   width: 100%;
   margin: 0;
 }
@@ -35,7 +33,6 @@ img {
 main {
   width: 80%;
   margin: 0 auto;
-  min-height: 65%;
 }
 
 @media (min-width: 610px) {
@@ -49,6 +46,12 @@ footer {
   padding: 0.2rem;
   background: #3d5262;
   color: #addbff;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  /* height: 100px; */
+  width: 100%;
+  overflow: hidden;
 }
 
 a.footer-link {
