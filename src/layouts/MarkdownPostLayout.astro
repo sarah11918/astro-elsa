@@ -6,9 +6,9 @@ const postDate = content.date.slice(0,10);
 <BaseLayout title = {content.title}>
 <main>
   <p>{content.url}<p>
+  <p><em>{content.description}</em></p>
   <h1>{content.title}</h1>
   <p>Written by: {content.author} on {postDate}</p>
-  <p>{content.description}</p>
   <article><slot /></article>
   <main>
 </BaseLayout>

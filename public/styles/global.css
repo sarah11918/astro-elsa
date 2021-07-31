@@ -35,12 +35,6 @@ main {
   margin: 0 auto;
 }
 
-@media (min-width: 610px) {
-  main {
-    min-height: 65%;
-  }
-}
-
 footer {
   text-align: center;
   padding: 0.2rem;
