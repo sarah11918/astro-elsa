@@ -17,7 +17,7 @@ import { Markdown } from 'astro/components';
       data-auto-a11y="true"
     ></script>
   </head>
-  <body>
+  <body style="min-height: 100vh; display: flex; flex-direction: column;">
    
   <header id="header-container">
     <div class="site-header-inside">
@@ -90,6 +90,7 @@ import { Markdown } from 'astro/components';
              
    
     <slot />
+    <div style="flex-grow:1"></div>
     <footer>
         <div class="social-links social-footer">
                             <a href="https://twitter.com/sarah11918" class="button-circle">
