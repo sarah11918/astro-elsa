@@ -1,17 +1,13 @@
 ---
 const {content} = Astro.props;
 import BaseLayout from '../layouts/BaseLayout.astro'
-
-
-console.log(`My date is a ${typeof content.date}`)
-
-
+const postDate = content.date.slice(0,10);
 ---
 <BaseLayout title = {content.title}>
 <main>
   <p>{content.url}<p>
   <h1>{content.title}</h1>
-  <p>Written by: {content.author} on {content.date}</p>
+  <p>Written by: {content.author} on {postDate}</p>
   <p>{content.description}</p>
   <article><slot /></article>
   <main>
