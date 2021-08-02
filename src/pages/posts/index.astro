@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { Markdown } from 'astro/components'
+let allPosts = Astro.fetchContent('*.md');
+allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+
+---
+<BaseLayout title="All Posts">
+  <main>
+    <h2> Post Archive</h2>
+    <p style="font-size: 0.8rem; color: darkred;">(Still to troubleshoot: the `{post.url}` in my development environment is <em>/posts/first-post</em> but in my Netlify build, it's <em>/first-post</em>)</p>
+    <div>
+      {allPosts.map((post) => (
+        <article>
+          <h3>{post.title}</h3>
+          <p style="font-size: 0.8em; color: green"><em>{post.url}</em></p>
+          <p>{post.description}</p>
+          <p>{new Date(post.date).toISOString().slice(0, 10)}</p>
+          <a style="font-size: 0.8em;" href={post.url}>Read more</a>
+          <hr>
+        </article>
+      ))}
+    </div>
+  </main>
+</BaseLayout>
