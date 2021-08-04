@@ -9,7 +9,6 @@ allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
 <BaseLayout title="All Posts">
   <main>
     <h2> Post Archive</h2>
-    <p style="font-size: 0.8rem; color: darkred;">(Still to troubleshoot: the `{post.url}` in my development environment is <em>/posts/first-post</em> but in my Netlify build, it's <em>/first-post</em>)</p>
     <div>
       {allPosts.map((post) => (
         <article>
