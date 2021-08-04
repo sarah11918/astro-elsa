@@ -8,6 +8,7 @@
     "build": "astro build"
   },
   "dependencies": {
+    "@snowpack/plugin-postcss": "1.4.3",
     "astro": "0.18.8",
     "node": "^14.13.1",
     "react": "^17",
@@ -17,7 +18,5 @@
   "devDependencies": {
     "nodemon": "1.18.4"
   },
-  "keywords": [
-    "astro"
-  ]
+  "keywords": ["astro"]
 }
