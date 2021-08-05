@@ -1,0 +1,13 @@
+---
+const {content} = Astro.props;
+import BaseLayout from '../layouts/BaseLayout.astro'
+import BirdNav from '../bird/BirdNav.jsx';
+import Regions from '../bird/Regions.jsx';
+---
+<BaseLayout title = "">
+  <main>
+  <BirdNav />
+    <slot /> 
+  <h5 style="text-align: center;"><a href="/sbird/regions">Need to find your eBird Region?</a></h5>
+  <main>
+  </BaseLayout>
