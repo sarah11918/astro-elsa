@@ -1,0 +1,41 @@
+.birdnav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 1.5em;
+}
+
+.birdtab {
+  background: rgb(157, 218, 157);
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  min-width: 70px;
+  text-align: center;
+}
+
+.bird-welcome {
+  text-align: center;
+}
+
+.birdPending {
+  font-style: italic;
+}
+
+.birdNotValid {
+  text-decoration:line-through;
+}
+
+.bird-result{
+  margin: 0;
+  font-size: 2em;
+  text-align: center;
+  background: blue;
+  color: white;
+}
+
+@media (min-width: 610px) {
+  .birdnav {
+    margin: 0 auto;
+    max-width: 65%;
+  }
+}
