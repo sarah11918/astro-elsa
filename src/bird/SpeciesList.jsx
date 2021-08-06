@@ -2,7 +2,7 @@ import React from "react";
 
 export default function SpeciesList(props) {
   let birdDivs = props.birdList.map((bird) => (
-    <li className="birdItem">{bird}</li>
+    <li key={bird} className="birdItem">{bird}</li>
   ));
 
   return (

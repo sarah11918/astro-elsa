@@ -10,7 +10,9 @@ export default function RecentBirdList(props) {
   }
 
   let birdDivs = listOfRecentBirds.map((bird) => (
-    <li className="birdItem">{bird}</li>
+    <li key={bird} className="birdItem">
+      {bird}
+    </li>
   ));
 
   return (
