@@ -1,6 +1,7 @@
 {
   "name": "astro-elsa",
   "version": "1.0.0",
+  "private": true,
   "description": "Astro playground built during Tropical Storm Elsa",
   "main": "src/pages/index.astro",
   "scripts": {
