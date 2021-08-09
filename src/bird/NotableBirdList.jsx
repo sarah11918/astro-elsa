@@ -16,34 +16,100 @@ export default function NotableBirdList(props) {
     }
   }
 
-  let birdsPendingReview = rareBirds.filter((bird) => bird.reviewed === false);
+  let birdsPendingReview = props.birdList.filter(
+    (bird) => bird.obsReviewed === false
+  );
 
-  let birdsVerified = rareBirds.filter((bird) => bird.valid === true);
+  let birdsOnlyPendingReview = rareBirds.filter(
+    (bird) => bird.reviewed === false
+  );
 
-  let birdsNotValid = rareBirds.filter((bird) => bird.reviewed && !bird.valid);
+  let birdsVerified = props.birdList.filter((bird) => bird.obsValid === true);
 
-  let birdsPendingDivs = birdsPendingReview.map((bird) => (
+  let birdsOnlyVerified = rareBirds.filter((bird) => bird.valid === true);
+
+  let birdsNotValid = props.birdList.filter(
+    (bird) => bird.obsReviewed && !bird.obsValid
+  );
+
+  let birdsOnlyNotValid = rareBirds.filter(
+    (bird) => bird.reviewed && !bird.valid
+  );
+
+  let birdsPendingDivs = birdsPendingReview.map((bird) => {
+    let checklistURL = `https://ebird.org/checklist/${bird.subId}`;
+
+    return (
+      <div key={bird.obsId} className="birdPending">
+        <p>
+          {bird.comName} - {bird.howMany ? bird.howMany : `present`}
+        </p>
+        <p>
+          {bird.obsDt} by {bird.userDisplayName}
+        </p>
+        <p>
+          Checklist: <a href={checklistURL}>{bird.subId}</a>
+        </p>
+        <hr />
+      </div>
+    );
+  });
+
+  let birdsOnlyPendingDivs = birdsOnlyPendingReview.map((bird) => (
     <li key={bird.name} className="birdPending">
-      {bird.name} (Not yet verified)
+      {bird.name}
     </li>
   ));
 
   let birdsVerifiedDivs = birdsVerified.map((bird) => (
-    <li key={bird.name}>{bird.name}</li>
+    <li key={bird.obsId}>{bird.name}</li>
+  ));
+
+  let birdsOnlyVerifiedDivs = birdsOnlyVerified.map((bird) => (
+    <li key={bird.name} className="birdVerified">{bird.name}</li>
   ));
 
   let birdsNotValidDivs = birdsNotValid.map((bird) => (
-    <li key={bird.name} className="birdNotValid">
+    <li key={bird.obsId} className="birdNotValid">
       {bird.name} was misidentified
+    </li>
+  ));
+
+  let birdsOnlyNotValidDivs = birdsOnlyNotValid.map((bird) => (
+    <li key={bird.name} className="birdNotValid">
+      Reports of a {bird.name} could not be confirmed
     </li>
   ));
 
   return (
     <>
-      <h3>Reported in the last 30 days...</h3>
-      <ul>{birdsPendingDivs}</ul>
+      <h2>Reported in the last 30 days...</h2>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div>
+          <h4>Birds Awaiting Review</h4>
+          <ul style={{ listStyleType: "none", paddingLeft: "0" }}>
+            {birdsOnlyPendingDivs}
+          </ul>
+        </div>
+        <div>
+          <h4>Birds Recently Confirmed</h4>
+          <ul style={{ listStyleType: "none", paddingLeft: "0" }}>
+            {birdsOnlyVerifiedDivs}
+          </ul>
+        </div>
+      </div>
+      <div style={{border: "1px dashed #3d5262", padding:" 0 0.25em", color:"#3d5262"}}>
+     
+      <h4>Birds whose identification could not be confirmed</h4>
+      {birdsOnlyNotValid.length > 0 ?
+      <ul>{birdsOnlyNotValidDivs}</ul> : "none"}
+      </div>
+      {/* <h4>Birds Awaiting Review</h4>
+      <ul id="pendingSightings">{birdsPendingDivs}</ul>
+      <h4>Sightings Not Yet Verified / Pending Review</h4> :
+
       <ul>{birdsVerifiedDivs}</ul>
-      <ul>{birdsNotValidDivs}</ul>
+      <ul>{birdsNotValidDivs}</ul> */}
     </>
   );
 }

@@ -19,7 +19,13 @@
 
 .birdPending {
   font-style: italic;
+  margin-bottom: 1.5em;
 }
+
+.birdVerified {
+  margin-bottom: 1.5em;
+}
+
 
 .birdNotValid {
   text-decoration:line-through;
