@@ -9,7 +9,8 @@ export default function RecentBirdList(props) {
     }
   }
 
-  let birdDivs = listOfRecentBirds.map((bird) => (
+  let listOfRecentBirdsSorted = listOfRecentBirds.sort()
+  let birdDivs = listOfRecentBirdsSorted.map((bird) => (
     <li key={bird} className="birdItem">
       {bird}
     </li>
@@ -18,7 +19,7 @@ export default function RecentBirdList(props) {
   return (
     <>
       <h3>Reported in the last 14 days...</h3>
-      <ul>{birdDivs}</ul>
+      <ul style={{ listStyleType: "none", paddingLeft: "0" }}>{birdDivs}</ul>
     </>
   );
 }

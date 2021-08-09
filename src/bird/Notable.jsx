@@ -88,8 +88,8 @@ export default function Notable() {
 
   function changeLocation(event) {
     event.preventDefault();
-    setLocation(event.target.elements.location.value);
-    getLocationSightings(event.target.elements.location.value);
+    setLocation(event.target.elements.location.value.toUpperCase());
+    getLocationSightings(event.target.elements.location.value.toUpperCase());
   }
   return (
     <>
@@ -131,6 +131,7 @@ export default function Notable() {
           name="location"
           type="text"
           placeholder="eBird region ID eg. CA-PE-PR"
+          style={{textTransform: "uppercase"}}
         />
         <button>Submit Location</button>
       </form>

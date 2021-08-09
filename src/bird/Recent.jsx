@@ -8,8 +8,9 @@ export default function Recent() {
 
   async function getSightings(event) {
     event.preventDefault();
-    setLocation(event.target.elements.location.value)
-    const recentUrl = `https://api.ebird.org/v2/data/obs/${event.target.elements.location.value}/recent?back=14`
+    setLocation(event.target.elements.location.value.toUpperCase())
+    const queryLocation = event.target.elements.location.value.toUpperCase()
+    const recentUrl = `https://api.ebird.org/v2/data/obs/${queryLocation}/recent?back=14`
     const myHeaders = new Headers();
     myHeaders.append("X-eBirdApiToken", "2ifbkhv7g8ct");
 
@@ -32,7 +33,7 @@ export default function Recent() {
       <h5 className="birdtab">Current location set: {location} </h5>
 
       <form onSubmit={getSightings}>
-        <input name="location" type="text" placeholder="eBird region ID eg. CA-PE"/>
+        <input name="location" type="text" placeholder="eBird region ID eg. CA-PE" style={{textTransform: "uppercase"}}/>
         <button> See the birds!</button>
       </form>
       <RecentBirdList birdList={recentBirds} />
