@@ -128,12 +128,16 @@ export default function NotableBirdList(props) {
           "none"
         )}
       </div>
-      <h2>Sighting Details</h2>
+      <h2>Details</h2>
       <h4>Sightings Not Yet Verified / Pending Review:</h4>
-      <ul id="pendingSightings" style ={{paddingLeft: "0"}}>{birdsPendingDivs}</ul>
+      {birdsPendingDivs.length > 0 ? (
+         <ul id="pendingSightings" style ={{paddingLeft: "0"}}>{birdsPendingDivs}</ul>
+      ) : ( "none") }
       <h4>Confirmed Sightings:</h4>
-      <ul id="verifiedSightings" style ={{paddingLeft: "0"}}>{birdsVerifiedDivs}</ul>
-      {/* <ul>{birdsVerifiedDivs}</ul>
+      {birdsVerifiedDivs.length > 0 ? (
+         <ul id="verifiedSightings" style ={{paddingLeft: "0"}}>{birdsVerifiedDivs}</ul>
+      ):( "none")}
+       {/* <ul>{birdsVerifiedDivs}</ul>
       <ul>{birdsNotValidDivs}</ul> */}
     </>
   );
