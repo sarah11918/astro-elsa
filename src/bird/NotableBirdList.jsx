@@ -40,14 +40,33 @@ export default function NotableBirdList(props) {
     let checklistURL = `https://ebird.org/checklist/${bird.subId}`;
 
     return (
-      <div key={bird.obsId} className="birdPending">
-        <p>
+      <div key={bird.obsId} className="birdPending" style={{color: "#3d5262"}} >
+        <p style={{fontSize: "1.2rem"}}>
           {bird.comName} - {bird.howMany ? bird.howMany : `present`}
         </p>
-        <p>
+        <p style={{fontSize: "0.85rem"}}>
           {bird.obsDt} by {bird.userDisplayName}
         </p>
-        <p>
+        <p style={{fontSize: "0.75rem"}}>
+          Checklist: <a href={checklistURL}>{bird.subId}</a>
+        </p>
+        <hr />
+      </div>
+    );
+  });
+
+  let birdsVerifiedDivs = birdsVerified.map((bird) => {
+    let checklistURL = `https://ebird.org/checklist/${bird.subId}`;
+
+    return (
+      <div key={bird.obsId} className="birdVerified">
+        <p style={{fontSize: "1.2rem"}}>
+          {bird.comName} - {bird.howMany ? bird.howMany : `present`}
+        </p>
+        <p style={{fontSize: "0.85rem"}}>
+          {bird.obsDt} by {bird.userDisplayName}
+        </p>
+        <p style={{fontSize: "0.75rem"}}>
           Checklist: <a href={checklistURL}>{bird.subId}</a>
         </p>
         <hr />
@@ -61,12 +80,10 @@ export default function NotableBirdList(props) {
     </li>
   ));
 
-  let birdsVerifiedDivs = birdsVerified.map((bird) => (
-    <li key={bird.obsId}>{bird.name}</li>
-  ));
-
   let birdsOnlyVerifiedDivs = birdsOnlyVerified.map((bird) => (
-    <li key={bird.name} className="birdVerified">{bird.name}</li>
+    <li key={bird.name} className="birdVerified">
+      {bird.name}
+    </li>
   ));
 
   let birdsNotValidDivs = birdsNotValid.map((bird) => (
@@ -97,17 +114,26 @@ export default function NotableBirdList(props) {
           </ul>
         </div>
       </div>
-      <div style={{border: "1px dashed #3d5262", padding:" 0 0.25em", color:"#3d5262"}}>
-     
-      <h4>Birds whose identification could not be confirmed</h4>
-      {birdsOnlyNotValid.length > 0 ?
-      <ul>{birdsOnlyNotValidDivs}</ul> : "none"}
+      <div
+        style={{
+          border: "1px dashed #3d5262",
+          padding: " 0 0.25em",
+          color: "#3d5262"
+        }}
+      >
+        <h4>Reports of birds whose identification could not be confirmed</h4>
+        {birdsOnlyNotValid.length > 0 ? (
+          <ul>{birdsOnlyNotValidDivs}</ul>
+        ) : (
+          "none"
+        )}
       </div>
-      {/* <h4>Birds Awaiting Review</h4>
-      <ul id="pendingSightings">{birdsPendingDivs}</ul>
-      <h4>Sightings Not Yet Verified / Pending Review</h4> :
-
-      <ul>{birdsVerifiedDivs}</ul>
+      <h2>Sighting Details</h2>
+      <h4>Sightings Not Yet Verified / Pending Review:</h4>
+      <ul id="pendingSightings" style ={{paddingLeft: "0"}}>{birdsPendingDivs}</ul>
+      <h4>Confirmed Sightings:</h4>
+      <ul id="verifiedSightings" style ={{paddingLeft: "0"}}>{birdsVerifiedDivs}</ul>
+      {/* <ul>{birdsVerifiedDivs}</ul>
       <ul>{birdsNotValidDivs}</ul> */}
     </>
   );
