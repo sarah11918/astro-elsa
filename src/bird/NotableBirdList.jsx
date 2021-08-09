@@ -83,7 +83,6 @@ export default function NotableBirdList(props) {
 
   return (
     <>
-      <h2>Reported in the last 30 days...</h2>
       <div style={{ display: "flex", justifyContent: "space-between" }}>
         <div>
           <h4>Birds Awaiting Review</h4>

@@ -39,6 +39,11 @@
   color: white;
 }
 
+.quickLocation {
+ margin-left: 1em;
+ margin-bottom: 0.5em;
+}
+
 @media (min-width: 610px) {
   .birdnav {
     margin: 0 auto;
