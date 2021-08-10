@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-
+import Markdown from 'astro/components';
 ---
 <BaseLayout title="About">
   <main>
@@ -11,6 +11,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       <li><a href="https://github.com/sarah11918/astro-elsa">in Github in 1s (for nicer browsing)</a></li>
       <li><a href="https://codesandbox.io/s/github/sarah11918/astro-elsa">on CodeSandbox</a> (Note, it might LOOK like it doesn't build, but if you just fork it, then the fork should work just fine. It's a CodeSandbox thing.) :P</li>
     </ul>
-
+    <Markdown>
+    I am Sarah. I am on Twitter [@sarah11918](https://www.twitter.com/sarah11918) and there is more [about me on my personal website](https://www.rainsberger.ca/about) that will get some more love as I rebuild the site from scratch.
+    </Markdown>
   <main>
 </BaseLayout>
