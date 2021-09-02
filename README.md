@@ -7,3 +7,6 @@ After spending time laying the groundwork to rescue www.summersidechoir.ca from 
 This is my Astro(.build) playground as I figure out what's what, deployed at https://astro-elsa.netlify.app/ , and try to do a bunch of things (using JavaScript and React) for the sake of doing them.
 
 As always, Coded on a Chromebook and Created with CodeSandbox
+
+<p>This is a p tag, for a test</p>
+<h1>And this is an h1</h1>
