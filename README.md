@@ -1,9 +1,12 @@
-<h1>This project is now suspended, and work is continuing at https://github.com/sarah11918/sastro</h1>
+<h1>This project is now suspended</h1>
+# (work is continuing at https://github.com/sarah11918/sastro)
 
 
 <h3 align="center">
   Taking advantage of Tropical Storm Elsa to learn Astro!
 </h3>
+
+### An indoor project!
 
 After spending time laying the groundwork to rescue www.summersidechoir.ca from a well-intentioned but fatally-flawed Jekyll instance (rewriting from scratch with GatsbyJS - project at https://github.com/sarah11918/scctake2), I got bored with the fine-tuning stage and wanted to explore what I want to do with my OWN website, www.rainsberger.ca
 
