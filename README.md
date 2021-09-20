@@ -10,3 +10,14 @@ As always, Coded on a Chromebook, in a browser and Created with CodeSandbox
 
 <p>This is a p tag, for a test</p>
 <h1>And this is an h1</h1>
+```js
+//Here is some markdown code:
+
+function addBallCount() {
+  if (ballsThrown < 3 && before.some(pin => pin === "up")) {
+    ballsThrown += 1;
+  }   
+  document.getElementById("balls-thrown").innerHTML = ballsThrown; 
+};
+
+```
